@@ -1,0 +1,19 @@
+{
+  "name": "injector",
+  "version": "1.0.0",
+  "description": "Injector",
+  "main": "inject.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebSeed/injector.git"
+  },
+  "author": "Will Bamford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WebSeed/injector/issues"
+  },
+  "homepage": "https://github.com/WebSeed/injector#readme"
+}
