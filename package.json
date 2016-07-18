@@ -4,7 +4,7 @@
   "description": "Injector",
   "main": "inject.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "browser-sync start --server './src' --files 'src' --index 'parent.html'"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/WebSeed/injector/issues"
   },
-  "homepage": "https://github.com/WebSeed/injector#readme"
+  "homepage": "https://github.com/WebSeed/injector#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0"
+  }
 }

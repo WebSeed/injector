@@ -3,12 +3,13 @@
   var mountSelector = '#mount';
 
   var iframeSrc = window.location.protocol + '//' + window.location.host + '/target.html';
+  var DEFAULT_WIDTH = '100%';
+  var DEFAULT_HEIGHT = '480px';
 
   var iframe = document.createElement('iframe');
   iframe.frameBorder = 0;
-  iframe.width = '640px';
-  iframe.height = '480px';
-  iframe.id = 'the-id';
+  iframe.width = DEFAULT_WIDTH;
+  iframe.height = DEFAULT_HEIGHT;
   iframe.addEventListener('load', function(event) {
     postMessage({ type: 'ready' });
   });

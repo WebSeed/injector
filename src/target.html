@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width">
     <style>
       body {
         background-color: blue;
@@ -15,49 +16,6 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-    <script>
-      (function(window, document) {
-
-        var resizeTimer;
-        var parentUrl;
-
-        // http://stackoverflow.com/a/1147768/186965
-        function getHeight() {
-          var body = document.body;
-          var html = document.documentElement;
-          return Math.max(
-            body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight
-          );
-        }
-
-        function postMessage(data) {
-          parent.postMessage(data, parentUrl);
-        }
-
-        function onMessage(event) {
-          console.log('message from parent', event);
-          if (event.data.type === 'ready') {
-            parentUrl = event.origin;
-            postHeight();
-          }
-        }
-
-        function onResize(event) {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(postHeight, 100);
-        }
-
-        function postHeight() {
-          var height = getHeight();
-          console.log('Sending ' + height);
-          postMessage({ type: 'height', height: height });
-        }
-
-        window.addEventListener('resize', onResize, false);
-        window.addEventListener('message', onMessage, false);
-
-      }(window, document))
-    </script>
+    <script src="target.js"></script>
   </body>
 </html>
