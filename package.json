@@ -2,10 +2,10 @@
   "name": "injector",
   "version": "1.0.0",
   "description": "Injector",
-  "main": "build/injector.js",
+  "main": "build/Injector.js",
   "scripts": {
-    "build": "browserify -e src/index.js -s injector -o build/injector.js",
-    "watch": "watchify -e src/index.js -s injector -o build/injector.js",
+    "build": "browserify -e src/index.js -s Injector -o build/Injector.js",
+    "watch": "watchify -e src/index.js -s Injector -o build/Injector.js",
     "sync": "browser-sync start --server './build' --files 'build' --index './parent.html'"
   },
   "repository": {

@@ -8,10 +8,10 @@
   <body>
     <h1>Parent title</h1>
     <div id="mount"></div>
-    <script src="./injector.js"></script>
+    <script src="./Injector.js"></script>
     <script>
       console.log('Doing the injection!');
-      injector.initParent({
+      Injector.initParent({
         selector: '#mount',
         url: window.location.protocol + '//' + window.location.host + '/child.html'
       });
