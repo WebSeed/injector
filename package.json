@@ -2,9 +2,11 @@
   "name": "injector",
   "version": "1.0.0",
   "description": "Injector",
-  "main": "src/injectIframe.js",
+  "main": "build/injector.js",
   "scripts": {
-    "start": "browser-sync start --server './src' --files 'src' --index 'parent.html'"
+    "build": "browserify -e src/index.js -s injector -o build/injector.js",
+    "watch": "watchify -e src/index.js -s injector -o build/injector.js",
+    "sync": "browser-sync start --server './build' --files 'build' --index './parent.html'"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/WebSeed/injector#readme",
   "devDependencies": {
-    "browser-sync": "^2.13.0"
+    "browser-sync": "^2.13.0",
+    "browserify": "^13.0.1",
+    "watchify": "^3.7.0"
   }
 }

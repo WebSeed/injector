@@ -1,4 +1,6 @@
-var childInjector = function() {
+module.exports = function() {
+
+  console.log('Injector: initialising the child');
 
   var resizeTimer;
   var parentUrl;
@@ -39,7 +41,4 @@ var childInjector = function() {
 
   window.addEventListener('resize', onResize, false);
   window.addEventListener('message', onMessage, false);
-
 };
-
-window.childInjector = childInjector;

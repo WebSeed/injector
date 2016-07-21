@@ -1,4 +1,6 @@
-var parentInjector = function(opts) {
+module.exports = function(opts) {
+
+  console.log('Injector: initialising the parent');
 
   var selector = opts.selector;
   var url = opts.url;
@@ -32,5 +34,3 @@ var parentInjector = function(opts) {
   document.querySelector(selector).appendChild(iframe);
   window.addEventListener('message', onMessage, false);
 };
-
-window.parentInjector = parentInjector;
