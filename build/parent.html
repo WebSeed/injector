@@ -10,10 +10,24 @@
     <div id="mount"></div>
     <script src="./Injector.js"></script>
     <script>
-      console.log('Doing the injection!');
+
+      // http://stackoverflow.com/a/901144/186965
+      function getQuery(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+        var results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      var url = getQuery('url') || (window.location.protocol + '//' + window.location.host + '/child.html');
+      console.log('Loading URL ' + url);
+
       Injector.initParent({
         selector: '#mount',
-        url: window.location.protocol + '//' + window.location.host + '/child.html'
+        url: url
       });
     </script>
   </body>
