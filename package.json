@@ -2,7 +2,7 @@
   "name": "injector",
   "version": "1.0.0",
   "description": "Injector",
-  "main": "build/Injector.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "browserify -e src/index.js -s Injector -o build/Injector.js",
     "watch": "watchify -e src/index.js -s Injector -o build/Injector.js",
