@@ -14,6 +14,7 @@ module.exports = function() {
 
   var resizeTimer;
   var parentUrl;
+  var ready = false;
 
   // http://stackoverflow.com/a/1147768/186965
   function getHeight() {
@@ -25,13 +26,16 @@ module.exports = function() {
   }
 
   function postMessage(data) {
-    parent.postMessage(data, parentUrl);
+    if (ready) {
+      parent.postMessage(data, parentUrl);
+    }
   }
 
   function onMessage(event) {
     console.log('message from parent', event);
     if (event.data.type === 'ready') {
       parentUrl = event.origin;
+      ready = true;
       // TODO: validate parent URL
       postHeight();
     }
