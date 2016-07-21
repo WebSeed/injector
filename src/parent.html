@@ -8,6 +8,13 @@
   <body>
     <h1>Injector</h1>
     <div id="mount"></div>
-    <script src="./parent.js"></script>
+    <script src="./injectIframe.js"></script>
+    <script>
+      console.log('Doing the injection!');
+      injectIframe({
+        selector: '#mount',
+        url: window.location.protocol + '//' + window.location.host + '/target.html'
+      });
+    </script>
   </body>
 </html>

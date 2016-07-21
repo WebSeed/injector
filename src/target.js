@@ -26,6 +26,7 @@
   }
 
   function onResize(event) {
+    /* debounce */
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(postHeight, 100);
   }

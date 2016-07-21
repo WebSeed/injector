@@ -2,7 +2,7 @@
   "name": "injector",
   "version": "1.0.0",
   "description": "Injector",
-  "main": "inject.js",
+  "main": "src/injectIframe.js",
   "scripts": {
     "start": "browser-sync start --server './src' --files 'src' --index 'parent.html'"
   },
