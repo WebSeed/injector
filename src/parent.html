@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width">
   </head>
   <body>
-    <h1>Injector</h1>
+    <h1>Parent title</h1>
     <div id="mount"></div>
-    <script src="./injectIframe.js"></script>
+    <script src="parent.js"></script>
     <script>
       console.log('Doing the injection!');
-      injectIframe({
+      parentInjector({
         selector: '#mount',
-        url: window.location.protocol + '//' + window.location.host + '/target.html'
+        url: window.location.protocol + '//' + window.location.host + '/child.html'
       });
     </script>
   </body>

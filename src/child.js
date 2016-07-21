@@ -1,4 +1,4 @@
-(function(window, document) {
+var childInjector = function() {
 
   var resizeTimer;
   var parentUrl;
@@ -40,4 +40,6 @@
   window.addEventListener('resize', onResize, false);
   window.addEventListener('message', onMessage, false);
 
-}(window, document))
+};
+
+window.childInjector = childInjector;

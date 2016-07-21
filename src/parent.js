@@ -1,4 +1,4 @@
-var injectIframe = function(opts) {
+var parentInjector = function(opts) {
 
   var selector = opts.selector;
   var url = opts.url;
@@ -19,7 +19,7 @@ var injectIframe = function(opts) {
   }
 
   function onMessage(event) {
-    console.log('message event from target', event);
+    console.log('Target event', event);
     if (event.data.type === 'height') {
       iframe.height = event.data.height + 'px';
     }
@@ -33,4 +33,4 @@ var injectIframe = function(opts) {
   window.addEventListener('message', onMessage, false);
 };
 
-window.injectIframe = injectIframe;
+window.parentInjector = parentInjector;
