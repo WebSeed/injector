@@ -66,7 +66,14 @@ module.exports = function(opts) {
   var url = opts.url;
   var width = opts.width || '100%';
   var height = opts.height || '480px';
-  var iframe = createIframe(url);
+  var replace = opts.replace || false;
+
+  function clearDom(selector) {
+    var node = document.querySelector(selector);
+    while (node && node.firstChild) {
+      node.removeChild(node.firstChild);
+    }
+  }
 
   function createIframe(src) {
     var iframe = document.createElement('iframe');
@@ -90,6 +97,12 @@ module.exports = function(opts) {
   function postMessage(data) {
     iframe.contentWindow.postMessage(data, url);
   }
+
+  if (replace) {
+    clearDom(selector);
+  }
+
+  var iframe = createIframe(url);
 
   document.querySelector(selector).appendChild(iframe);
   window.addEventListener('message', onMessage, false);
